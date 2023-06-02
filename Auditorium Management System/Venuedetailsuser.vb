@@ -24,4 +24,12 @@ Public Class Venuedetailsuser
         Me.Hide()
         Userlogin.Show()
     End Sub
+
+    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+        If e.RowIndex Mod 2 = 0 Then
+            e.CellStyle.BackColor = Color.SteelBlue
+        Else
+            e.CellStyle.BackColor = Color.SteelBlue
+        End If
+    End Sub
 End Class

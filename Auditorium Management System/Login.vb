@@ -13,9 +13,8 @@ Public Class Login
         If (dt.Rows.Count > 0) Then
             MessageBox.Show("You Are Logged In As " + dt.Rows(0)(5))
             Dim loggedInUser As String = dt.Rows(0)(7).ToString() ' assuming the username is in the first column of the query result
-            If (cmbUserType.SelectedItem.ToString() = "Admin") Then
-                Dim a As New Admin
-                a.Show()
+            If (cmbUserType.SelectedItem.ToString() = "admin") Then
+                Admin.Show()
                 Me.Hide()
             Else
                 Dim u As New Userlogin(loggedInUser)

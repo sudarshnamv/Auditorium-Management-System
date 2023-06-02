@@ -65,23 +65,23 @@ Public Class Adduser
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
         Dim con As SqlConnection = New SqlConnection("Data Source=SUDARSHNA;Initial Catalog=vbmultiuser;Integrated Security=True")
-        Dim cmd As SqlCommand = New SqlCommand("INSERT INTO [dbo].[userregistration]
-        ([name]
-        ,[empid]
-        ,[gender]
-        ,[phone]
-        ,[email]
-        ,[usertype]
-        ,[username]
-        ,[password])
-        VALUES
-        ('" + txtName.Text + "','" + txtEmpid.Text + "','" + cmbGender.SelectedItem.ToString() + "','" + txtPhone.Text + "','" + txtEmail.Text + "','" + cmbUsertype.SelectedItem.ToString() + "','" + txtUser.Text + "','" + txtPass.Text + "')", con)
+        Dim cmd As SqlCommand = New SqlCommand("INSERT INTO [dbo].[userregistration] ([name], [empid], [gender], [phone], [email], [usertype], [username], [password]) VALUES (@name, @empid, @gender, @phone, @email, @usertype, @username, @password)", con)
 
-        con.Open()
-        cmd.ExecuteNonQuery()
+        ' Add parameters to the InsertCommand
+        cmd.Parameters.Add("@name", SqlDbType.VarChar).Value = txtName.Text
+        cmd.Parameters.Add("@empid", SqlDbType.VarChar).Value = txtEmpid.Text
+        cmd.Parameters.Add("@gender", SqlDbType.VarChar).Value = cmbGender.SelectedItem.ToString()
+        cmd.Parameters.Add("@phone", SqlDbType.VarChar).Value = txtPhone.Text
+        cmd.Parameters.Add("@email", SqlDbType.VarChar).Value = txtEmail.Text
+        cmd.Parameters.Add("@usertype", SqlDbType.VarChar).Value = cmbUsertype.SelectedItem.ToString()
+        cmd.Parameters.Add("@username", SqlDbType.VarChar).Value = txtUser.Text
+        cmd.Parameters.Add("@password", SqlDbType.VarChar).Value = txtPass.Text
 
-
+        ' Create the DataAdapter and set the InsertCommand
         Dim da As SqlDataAdapter = New SqlDataAdapter("SELECT * FROM userregistration", con)
+        da.InsertCommand = cmd
+
+        ' Create the DataTable and fill it with data from the database
         Dim dt As DataTable = New DataTable()
         da.Fill(dt)
 
@@ -105,6 +105,15 @@ Public Class Adduser
 
         User.Show()
         Me.Hide()
+        ' Clear the values in the textboxes
+        txtName.Clear()
+        txtEmpid.Clear()
+        cmbGender.SelectedIndex = -1
+        txtPhone.Clear()
+        txtEmail.Clear()
+        cmbUsertype.SelectedIndex = -1
+        txtUser.Clear()
+        txtPass.Clear()
     End Sub
 
     Private Sub txtEmail_Leave(sender As Object, e As EventArgs) Handles txtEmail.Leave

@@ -74,11 +74,11 @@ Partial Class Feedbacksee
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(85, 116)
+        Me.DataGridView1.Location = New System.Drawing.Point(145, 133)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.RowTemplate.Height = 24
-        Me.DataGridView1.Size = New System.Drawing.Size(669, 369)
+        Me.DataGridView1.Size = New System.Drawing.Size(501, 295)
         Me.DataGridView1.TabIndex = 75
         '
         'PictureBox2

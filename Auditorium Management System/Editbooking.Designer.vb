@@ -265,6 +265,7 @@ Partial Class Editbooking
         Me.Controls.Add(Me.txtEventname)
         Me.DoubleBuffered = True
         Me.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "Editbooking"
         Me.Text = "Edit Booking"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

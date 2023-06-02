@@ -30,7 +30,13 @@ Public Class Venuedetails
         Me.Hide()
         Venueadd.Show()
     End Sub
-
+    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+        If e.RowIndex Mod 2 = 0 Then
+            e.CellStyle.BackColor = Color.SteelBlue
+        Else
+            e.CellStyle.BackColor = Color.SteelBlue
+        End If
+    End Sub
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         DataGridView1.Columns(0).Width = 500
         DataGridView1.Columns(1).Width = 500

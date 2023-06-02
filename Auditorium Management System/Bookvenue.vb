@@ -1,8 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.ToolBar
+'Imports MySql.Data.MySqlClient
+Imports MySqlConnector
 
 Public Class Bookvenue
     Private connectionString As String = "Data Source=SUDARSHNA;Initial Catalog=vbmultiuser;Integrated Security=True"
+
 
 
     Private Sub LoadAvailableAuditoriums(ByVal dateofbooking As Date)
@@ -26,11 +29,10 @@ Public Class Bookvenue
         End Using
     End Sub
 
-
-
-
-
-
+    Private Sub Bookvenue_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DateTimePicker1.MinDate = DateTime.Today ' Set the minimum selectable date to the current date
+        DateTimePicker1.Value = DateTime.Today ' Set the default date to the current date
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim eventName As String = txtEventname.Text
         Dim dateofbooking As DateTime = DateTimePicker1.Value
@@ -45,7 +47,20 @@ Public Class Bookvenue
         Using connection As New SqlConnection(connectionString)
             connection.Open()
 
-            Dim sql As String = "INSERT INTO bookingdetails (EventName, DateOfBooking, Venue, EventInCharge, PhoneNo, Department) VALUES (@EventName, @dateofbooking, @Venue, @EventInCharge, @PhoneNo, @Department)"
+            ' Check if the selected venue and date are already booked
+            Dim sql As String = "SELECT COUNT(*) FROM bookingdetails WHERE Venue = @Venue AND DateOfBooking = @dateofbooking"
+            Using command As New SqlCommand(sql, connection)
+                command.Parameters.AddWithValue("@Venue", venue)
+                command.Parameters.AddWithValue("@dateofbooking", dateofbooking)
+                Dim count As Integer = CInt(command.ExecuteScalar())
+                If count > 0 Then
+                    MessageBox.Show("Venue is already booked for the date chosen. Please choose a different venue or date.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+            End Using
+
+            ' Add the booking to the database
+            sql = "INSERT INTO bookingdetails (EventName, DateOfBooking, Venue, EventInCharge, PhoneNo, Department) VALUES (@EventName, @dateofbooking, @Venue, @EventInCharge, @PhoneNo, @Department)"
             Using command As New SqlCommand(sql, connection)
                 command.Parameters.AddWithValue("@EventName", eventName)
                 command.Parameters.AddWithValue("@dateofbooking", dateofbooking)
@@ -82,9 +97,6 @@ Public Class Bookvenue
         ComboBox1.SelectedIndex = -1
     End Sub
 
-    'Private Sub venuebooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    '   LoadAvailableAuditoriums()
-    'End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Hide()
@@ -178,6 +190,22 @@ WHERE b.dateofbooking = @dateofbooking AND v.Venue = @venue"
     End Sub
 
     Private Sub txtPhone_KeyDown(sender As Object, e As KeyEventArgs) Handles txtPhone.KeyDown
+        ' Allow only numeric keys, Backspace, and Delete
+        If Not (e.KeyCode >= Keys.D0 And e.KeyCode <= Keys.D9) AndAlso
+        e.KeyCode <> Keys.Back AndAlso
+        e.KeyCode <> Keys.Delete Then
+            e.SuppressKeyPress = True
+            Return
+        End If
+
+        ' Limit the length of the phone number to 10 characters
+        If txtPhone.Text.Length >= 10 AndAlso
+        e.KeyCode <> Keys.Back AndAlso
+        e.KeyCode <> Keys.Delete Then
+            e.SuppressKeyPress = True
+            Return
+        End If
+
         If e.KeyCode = Keys.Enter Then
             txtDepartment.Focus()
         End If
@@ -191,4 +219,5 @@ WHERE b.dateofbooking = @dateofbooking AND v.Venue = @venue"
         End If
 
     End Sub
+
 End Class

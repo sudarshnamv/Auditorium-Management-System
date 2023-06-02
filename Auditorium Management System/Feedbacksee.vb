@@ -16,9 +16,6 @@ Public Class Feedbacksee
 
         DataGridView1.EndEdit()
         adapter.Update(CType(DataGridView1.DataSource, DataTable))
-
-        MessageBox.Show("Updated Successfully!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
         Me.Hide()
         Admin.Show()
     End Sub

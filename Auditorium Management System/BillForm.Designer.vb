@@ -24,20 +24,22 @@ Partial Class BillForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BillForm))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.lblTransactionID = New System.Windows.Forms.Label()
-        Me.lblTransactionDate = New System.Windows.Forms.Label()
-        Me.lblTotalAmount = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.lblTotalAmount = New System.Windows.Forms.Label()
+        Me.lblTransactionDate = New System.Windows.Forms.Label()
+        Me.lblTransactionID = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.btnSave)
         Me.Panel1.Controls.Add(Me.lblTotalAmount)
         Me.Panel1.Controls.Add(Me.lblTransactionDate)
@@ -50,76 +52,6 @@ Partial Class BillForm
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(323, 375)
         Me.Panel1.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(130, 31)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 20)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "BILL"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(19, 106)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(130, 20)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Transaction ID:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(3, 187)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(146, 20)
-        Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Transaction Date:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(38, 272)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(111, 20)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "Total Amout:"
-        '
-        'lblTransactionID
-        '
-        Me.lblTransactionID.AutoSize = True
-        Me.lblTransactionID.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTransactionID.Location = New System.Drawing.Point(166, 106)
-        Me.lblTransactionID.Name = "lblTransactionID"
-        Me.lblTransactionID.Size = New System.Drawing.Size(140, 20)
-        Me.lblTransactionID.TabIndex = 5
-        Me.lblTransactionID.Text = "lblTransactionID"
-        '
-        'lblTransactionDate
-        '
-        Me.lblTransactionDate.AutoSize = True
-        Me.lblTransactionDate.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTransactionDate.Location = New System.Drawing.Point(166, 187)
-        Me.lblTransactionDate.Name = "lblTransactionDate"
-        Me.lblTransactionDate.Size = New System.Drawing.Size(156, 20)
-        Me.lblTransactionDate.TabIndex = 6
-        Me.lblTransactionDate.Text = "lblTransactionDate"
-        '
-        'lblTotalAmount
-        '
-        Me.lblTotalAmount.AutoSize = True
-        Me.lblTotalAmount.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTotalAmount.Location = New System.Drawing.Point(166, 272)
-        Me.lblTotalAmount.Name = "lblTotalAmount"
-        Me.lblTotalAmount.Size = New System.Drawing.Size(132, 20)
-        Me.lblTotalAmount.TabIndex = 7
-        Me.lblTotalAmount.Text = "lblTotalAmount"
         '
         'btnSave
         '
@@ -134,6 +66,76 @@ Partial Class BillForm
         Me.btnSave.Text = "SAVE"
         Me.btnSave.UseVisualStyleBackColor = False
         '
+        'lblTotalAmount
+        '
+        Me.lblTotalAmount.AutoSize = True
+        Me.lblTotalAmount.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTotalAmount.Location = New System.Drawing.Point(166, 272)
+        Me.lblTotalAmount.Name = "lblTotalAmount"
+        Me.lblTotalAmount.Size = New System.Drawing.Size(132, 20)
+        Me.lblTotalAmount.TabIndex = 7
+        Me.lblTotalAmount.Text = "lblTotalAmount"
+        '
+        'lblTransactionDate
+        '
+        Me.lblTransactionDate.AutoSize = True
+        Me.lblTransactionDate.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTransactionDate.Location = New System.Drawing.Point(166, 187)
+        Me.lblTransactionDate.Name = "lblTransactionDate"
+        Me.lblTransactionDate.Size = New System.Drawing.Size(156, 20)
+        Me.lblTransactionDate.TabIndex = 6
+        Me.lblTransactionDate.Text = "lblTransactionDate"
+        '
+        'lblTransactionID
+        '
+        Me.lblTransactionID.AutoSize = True
+        Me.lblTransactionID.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTransactionID.Location = New System.Drawing.Point(166, 106)
+        Me.lblTransactionID.Name = "lblTransactionID"
+        Me.lblTransactionID.Size = New System.Drawing.Size(140, 20)
+        Me.lblTransactionID.TabIndex = 5
+        Me.lblTransactionID.Text = "lblTransactionID"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(38, 272)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(111, 20)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "Total Amout:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(3, 187)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(146, 20)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Transaction Date:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(19, 106)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(130, 20)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Transaction ID:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(130, 31)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 20)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "BILL"
+        '
         'btnClose
         '
         Me.btnClose.BackColor = System.Drawing.Color.SteelBlue
@@ -146,6 +148,16 @@ Partial Class BillForm
         Me.btnClose.TabIndex = 72
         Me.btnClose.Text = "CLOSE"
         Me.btnClose.UseVisualStyleBackColor = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Times New Roman", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(39, 62)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(248, 15)
+        Me.Label5.TabIndex = 72
+        Me.Label5.Text = "PAYMENT SHOULD BE DONE MANUALLY"
         '
         'BillForm
         '
@@ -176,4 +188,5 @@ Partial Class BillForm
     Friend WithEvents Label1 As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents btnClose As Button
+    Friend WithEvents Label5 As Label
 End Class

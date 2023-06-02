@@ -31,6 +31,9 @@ Partial Class Form1
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label8
@@ -63,6 +66,7 @@ Partial Class Form1
         Me.txtMessage.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.txtMessage.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.8!)
+        Me.txtMessage.ForeColor = System.Drawing.SystemColors.MenuBar
         Me.txtMessage.Location = New System.Drawing.Point(301, 305)
         Me.txtMessage.Name = "txtMessage"
         Me.txtMessage.Size = New System.Drawing.Size(231, 30)
@@ -73,6 +77,7 @@ Partial Class Form1
         Me.txtEmail.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.8!)
+        Me.txtEmail.ForeColor = System.Drawing.SystemColors.MenuBar
         Me.txtEmail.Location = New System.Drawing.Point(301, 224)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(231, 30)
@@ -83,6 +88,7 @@ Partial Class Form1
         Me.txtName.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtName.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.8!)
+        Me.txtName.ForeColor = System.Drawing.SystemColors.MenuBar
         Me.txtName.Location = New System.Drawing.Point(301, 145)
         Me.txtName.Name = "txtName"
         Me.txtName.Size = New System.Drawing.Size(231, 30)
@@ -121,6 +127,31 @@ Partial Class Form1
         Me.Label4.TabIndex = 78
         Me.Label4.Text = "NAME:"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.BackgroundImage = CType(resources.GetObject("PictureBox2.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox2.Location = New System.Drawing.Point(661, -2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(34, 33)
+        Me.PictureBox2.TabIndex = 86
+        Me.PictureBox2.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!)
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(677, -2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(105, 33)
+        Me.Button1.TabIndex = 85
+        Me.Button1.Text = "BACK"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -128,6 +159,8 @@ Partial Class Form1
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(782, 501)
+        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.txtMessage)
         Me.Controls.Add(Me.txtEmail)
@@ -141,6 +174,7 @@ Partial Class Form1
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "Form1"
         Me.Text = "FEEDBACKS"
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -154,4 +188,6 @@ Partial Class Form1
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class

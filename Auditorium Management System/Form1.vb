@@ -33,7 +33,8 @@ Public Class Form1
             txtName.Clear()
             txtEmail.Clear()
             txtMessage.Clear()
-
+            Me.Close()
+            Userlogin.Show()
         Catch ex As Exception
             ' Display an error message if an exception occurs
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -41,5 +42,14 @@ Public Class Form1
             ' Close the database connection
             conn.Close()
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Hide()
+        Userlogin.Show()
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+
     End Sub
 End Class

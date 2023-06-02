@@ -102,6 +102,7 @@ Partial Class Homepage
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Name = "Homepage"
         Me.Text = "Homepage"
         Me.Panel1.ResumeLayout(False)

@@ -7,7 +7,13 @@ Public Class Allbookings
     Dim ds As DataSet
     Dim dt As DataTable
 
-
+    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+        If e.RowIndex Mod 2 = 0 Then
+            e.CellStyle.BackColor = Color.SteelBlue
+        Else
+            e.CellStyle.BackColor = Color.WhiteSmoke
+        End If
+    End Sub
 
     Private Sub LoadData()
         Dim query As String = "SELECT EventName, dateofbooking, Department,eventincharge, venue FROM BookingDetails WHERE dateofbooking >= @TodayDate ORDER BY dateofbooking ASC"

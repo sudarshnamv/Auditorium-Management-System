@@ -11,6 +11,8 @@ Public Class Editbooking
         adapter = New SqlDataAdapter("SELECT * FROM bookingdetails", con)
         adapter.Fill(table)
         DataGridView1.DataSource = table
+        DataGridView1.BackgroundColor = Color.SteelBlue
+        DataGridView1.ForeColor = Color.White
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
@@ -32,14 +34,20 @@ Public Class Editbooking
         End If
     End Sub
 
-
+    Private Sub DataGridView1_CellFormatting(sender As Object, e As DataGridViewCellFormattingEventArgs) Handles DataGridView1.CellFormatting
+        If e.RowIndex Mod 2 = 0 Then
+            e.CellStyle.BackColor = Color.SteelBlue
+        Else
+            e.CellStyle.BackColor = Color.SteelBlue
+        End If
+    End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        'Update the selected user's details in the database
+        'Update the selected booking details in the database
         If txtUsername.Text = "" Or txtPassword.Text = "" Or lbl1.Text = "" Or txtPhn.Text = "" Then
             MessageBox.Show("Please fill in all fields.")
         Else
-            Dim cmd As New SqlCommand("UPDATE bookingdetails SET eventname=@eventname, phoneno=@phoneno, venue=@venue WHERE eventname=@oldEventName", con)
+            Dim cmd As New SqlCommand("UPDATE bookingdetails SET eventname=@eventname, phoneno=@phoneno, venue=@venue, dateofbooking=@dateofbooking WHERE eventname=@oldEventName", con)
             cmd.Parameters.AddWithValue("@eventname", txtUsername.Text)
             cmd.Parameters.AddWithValue("@venue", txtPassword.Text)
             cmd.Parameters.AddWithValue("@phoneno", lbl1.Text)
@@ -48,7 +56,7 @@ Public Class Editbooking
             con.Open()
             cmd.ExecuteNonQuery()
             con.Close()
-            MessageBox.Show("User details updated successfully.")
+            MessageBox.Show("Booking details updated successfully.")
         End If
         ' Refresh the DataGridView with updated data from the database
         table.Clear()
@@ -56,48 +64,14 @@ Public Class Editbooking
         DataGridView1.DataSource = table
     End Sub
 
-
-
-
-
-    'Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-    '    'Update the selected user's details in the database
-    '    If txtUsername.Text = "" Or txtPassword.Text = "" Or lbl1.Text = "" Or txtPhn.Text = "" Then
-    '        MessageBox.Show("Please fill in all fields.")
-    '    Else
-    '        Dim cmd As New SqlCommand("UPDATE bookingdetails SET eventname=@eventname, phoneno=@phoneno, venue=@venue WHERE eventname=@eventname", con)
-    '        cmd.Parameters.AddWithValue("@eventname", DataGridView1.CurrentRow.Cells("eventname").Value.ToString())
-    '        cmd.Parameters.AddWithValue("@eventname", txtUsername.Text)
-    '        cmd.Parameters.AddWithValue("@venue", txtPassword.Text)
-    '        cmd.Parameters.AddWithValue("@phoneno", lbl1.Text)
-    '        cmd.Parameters.AddWithValue("@dateofbooking", txtPhn.Text)
-    '        con.Open()
-    '        cmd.ExecuteNonQuery()
-    '        Dim da As SqlDataAdapter = New SqlDataAdapter("SELECT * FROM bookingdetails", con)
-    '        ' Create a DataTable to hold the data
-    '        Dim dt As DataTable = New DataTable()
-
-    '        ' Fill the DataTable with the data from the database
-    '        da.Fill(dt)
-    '        con.Close()
-    '        MessageBox.Show("User details updated successfully.")
-
-    '    End If
-    'End Sub
-
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
-        User.Show()
-    End Sub
-
-
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
-
+        Admin.Show()
     End Sub
 
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Close()
-        User.Show()
+        Dim adminForm As New Admin()
+        adminForm.Show()
     End Sub
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class BookingConf
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,13 +20,15 @@ Partial Class BookingConf
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BookingConf))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.lblCurrentDate = New System.Windows.Forms.Label()
         Me.lblLocation = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.lblEventName = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -35,9 +37,7 @@ Partial Class BookingConf
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnHome = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnPrint = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.lblCurrentDate = New System.Windows.Forms.Label()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,6 +57,16 @@ Partial Class BookingConf
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(375, 482)
         Me.Panel1.TabIndex = 0
+        '
+        'lblCurrentDate
+        '
+        Me.lblCurrentDate.AutoSize = True
+        Me.lblCurrentDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCurrentDate.Location = New System.Drawing.Point(189, 437)
+        Me.lblCurrentDate.Name = "lblCurrentDate"
+        Me.lblCurrentDate.Size = New System.Drawing.Size(118, 20)
+        Me.lblCurrentDate.TabIndex = 8
+        Me.lblCurrentDate.Text = "lblCurrentDate"
         '
         'lblLocation
         '
@@ -87,6 +97,16 @@ Partial Class BookingConf
         Me.lblEventName.Size = New System.Drawing.Size(112, 20)
         Me.lblEventName.TabIndex = 5
         Me.lblEventName.Text = "lblEventName"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(22, 437)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(138, 20)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Date Of Booking:"
         '
         'Label4
         '
@@ -134,7 +154,7 @@ Partial Class BookingConf
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnSave.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.btnSave.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSave.Location = New System.Drawing.Point(620, 338)
+        Me.btnSave.Location = New System.Drawing.Point(620, 422)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(132, 37)
         Me.btnSave.TabIndex = 24
@@ -179,39 +199,6 @@ Partial Class BookingConf
         Me.btnCancel.Text = "CANCEL"
         Me.btnCancel.UseVisualStyleBackColor = False
         '
-        'btnPrint
-        '
-        Me.btnPrint.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnPrint.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btnPrint.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnPrint.Location = New System.Drawing.Point(620, 406)
-        Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(132, 37)
-        Me.btnPrint.TabIndex = 25
-        Me.btnPrint.Text = "PRINT"
-        Me.btnPrint.UseVisualStyleBackColor = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(22, 437)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(138, 20)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Date Of Booking:"
-        '
-        'lblCurrentDate
-        '
-        Me.lblCurrentDate.AutoSize = True
-        Me.lblCurrentDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCurrentDate.Location = New System.Drawing.Point(189, 437)
-        Me.lblCurrentDate.Name = "lblCurrentDate"
-        Me.lblCurrentDate.Size = New System.Drawing.Size(118, 20)
-        Me.lblCurrentDate.TabIndex = 8
-        Me.lblCurrentDate.Text = "lblCurrentDate"
-        '
         'BookingConf
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -222,7 +209,6 @@ Partial Class BookingConf
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnHome)
         Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.btnPrint)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.Panel1)
         Me.DoubleBuffered = True
@@ -249,5 +235,5 @@ Partial Class BookingConf
     Friend WithEvents lblCurrentDate As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents btnCancel As Button
-    Friend WithEvents btnPrint As Button
+    Friend WithEvents SaveFileDialog1 As SaveFileDialog
 End Class

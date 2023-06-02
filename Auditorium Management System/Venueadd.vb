@@ -62,19 +62,19 @@ Public Class Venueadd
         ' Execute the SQL command
         cmd.ExecuteNonQuery()
 
+        UpdateDataGridView()
 
 
+        'Dim da As SqlDataAdapter = New SqlDataAdapter("SELECT * FROM Venuedetails", con)
 
-        Dim da As SqlDataAdapter = New SqlDataAdapter("SELECT * FROM Venuedetails", con)
+        '' Create a DataTable to hold the data
+        'Dim dt As DataTable = New DataTable()
 
-        ' Create a DataTable to hold the data
-        Dim dt As DataTable = New DataTable()
+        '' Fill the DataTable with the data from the database
+        'da.Fill(dt)
 
-        ' Fill the DataTable with the data from the database
-        da.Fill(dt)
-
-        ' Set the DataSource of your DataGridView to the DataTable
-        Venuedetails.DataGridView1.DataSource = dt
+        '' Set the DataSource of your DataGridView to the DataTable
+        'Venuedetails.DataGridView1.DataSource = dt
 
         ' Display a success message
         MessageBox.Show("Venue added successfully!")
@@ -91,6 +91,12 @@ Public Class Venueadd
         ' Clear picturebox
         flpImages.Controls.Clear()
 
+    End Sub
+    Private Sub UpdateDataGridView()
+        Dim da As SqlDataAdapter = New SqlDataAdapter("SELECT * FROM Venuedetails", con)
+        Dim dt As DataTable = New DataTable()
+        da.Fill(dt)
+        Venuedetails.DataGridView1.DataSource = dt
     End Sub
     Private Sub btnBack_Click(sender As Object, e As EventArgs) Handles btnBack.Click
         Me.Hide()

@@ -50,6 +50,7 @@ Partial Class Bookvenue
         Me.txtEventname.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.txtEventname.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtEventname.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.8!)
+        Me.txtEventname.ForeColor = System.Drawing.SystemColors.InactiveBorder
         Me.txtEventname.Location = New System.Drawing.Point(171, 165)
         Me.txtEventname.Name = "txtEventname"
         Me.txtEventname.Size = New System.Drawing.Size(231, 30)
@@ -60,7 +61,7 @@ Partial Class Bookvenue
         Me.lblLoggedInUser.AutoSize = True
         Me.lblLoggedInUser.BackColor = System.Drawing.Color.Transparent
         Me.lblLoggedInUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLoggedInUser.Location = New System.Drawing.Point(40, 170)
+        Me.lblLoggedInUser.Location = New System.Drawing.Point(27, 165)
         Me.lblLoggedInUser.Name = "lblLoggedInUser"
         Me.lblLoggedInUser.Size = New System.Drawing.Size(125, 25)
         Me.lblLoggedInUser.TabIndex = 10
@@ -71,7 +72,7 @@ Partial Class Bookvenue
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(23, 251)
+        Me.Label1.Location = New System.Drawing.Point(12, 248)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(140, 25)
         Me.Label1.TabIndex = 11
@@ -104,6 +105,7 @@ Partial Class Bookvenue
         '
         Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.ComboBox1.ForeColor = System.Drawing.SystemColors.MenuBar
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"SKE", "M1"})
         Me.ComboBox1.Location = New System.Drawing.Point(171, 331)
@@ -127,6 +129,7 @@ Partial Class Bookvenue
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.SystemColors.MenuBar
         Me.TextBox1.Location = New System.Drawing.Point(197, 393)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(124, 23)
@@ -137,7 +140,7 @@ Partial Class Bookvenue
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(432, 165)
+        Me.Label4.Location = New System.Drawing.Point(423, 165)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(149, 25)
         Me.Label4.TabIndex = 17
@@ -148,7 +151,7 @@ Partial Class Bookvenue
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(432, 251)
+        Me.Label5.Location = New System.Drawing.Point(423, 248)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(149, 25)
         Me.Label5.TabIndex = 18
@@ -159,7 +162,7 @@ Partial Class Bookvenue
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(462, 330)
+        Me.Label6.Location = New System.Drawing.Point(444, 325)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(119, 25)
         Me.Label6.TabIndex = 19
@@ -170,6 +173,7 @@ Partial Class Bookvenue
         Me.txtIncharge.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.txtIncharge.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtIncharge.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.8!)
+        Me.txtIncharge.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.txtIncharge.Location = New System.Drawing.Point(578, 165)
         Me.txtIncharge.Name = "txtIncharge"
         Me.txtIncharge.Size = New System.Drawing.Size(231, 30)
@@ -179,7 +183,9 @@ Partial Class Bookvenue
         '
         Me.txtPhone.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtPhone.Cursor = System.Windows.Forms.Cursors.Default
         Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.8!)
+        Me.txtPhone.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.txtPhone.Location = New System.Drawing.Point(578, 244)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(231, 30)
@@ -190,6 +196,7 @@ Partial Class Bookvenue
         Me.txtDepartment.BackColor = System.Drawing.Color.FromArgb(CType(CType(56, Byte), Integer), CType(CType(63, Byte), Integer), CType(CType(130, Byte), Integer))
         Me.txtDepartment.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDepartment.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.8!)
+        Me.txtDepartment.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.txtDepartment.Location = New System.Drawing.Point(578, 325)
         Me.txtDepartment.Name = "txtDepartment"
         Me.txtDepartment.Size = New System.Drawing.Size(231, 30)
